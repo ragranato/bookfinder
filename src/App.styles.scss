@@ -1,0 +1,29 @@
+ 
+ 
+ .genre-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+
+    .genre-label {
+            display: block;
+            color: antiquewhite;
+            font-size: 2rem;
+        }
+ }
+
+.book-selector {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    h1 {
+        width: 100%;    
+        font-size: 4rem; 
+        color: antiquewhite;   
+    }
+}
+    
