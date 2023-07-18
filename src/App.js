@@ -1,30 +1,36 @@
-import { useState, useEffect } from 'react';
-import './App.styles.scss';
+import { useState, useEffect } from "react";
+import "./App.styles.scss";
+import SelectMenu from "./components/SelectMenu/SelectMenu.component";
+import axios from "axios";
+import { API_URL, API_KEY } from "./API";
+import BookList from "./components/BookList/BookList.component";
 
 function App() {
-  const [ selection, setSelection ] = useState('');
+  const [bookList, setBookList] = useState([]);
+  const [selection, setSelection] = useState("");
 
   useEffect(() => {
-    fetch(`https://www.googleapis.com/books/v1/volumes?q=subject:${selection}&key=API`);
-  })
+    if (selection) {
+      axios
+        .get(
+          `${API_URL}subject:${selection}&filter=free-ebooks&maxResults=20&langRestrict=en&key=${API_KEY}`
+        )
+        .then((response) => {
+          const data = response.data;
+          setBookList(data.items);
+        })
+        .catch((e) => console.log(e));
+    }
+  }, [selection]);
 
+  // console.log(bookList)
   return (
     <div className="App">
-      <div className='book-selector'>
-        <h1>Find Your Next Book</h1>
-        <form className="genre-form">
-          <div>
-            <label className="genre-label">Choose a Genre</label>
-            <select className="selections">
-              <option>Select One</option>
-              <option value="mystery">Mystery</option>
-              <option value="fantasy">Fantasy</option>
-              <option value="science fiction">Science Fiction</option>
-              <option value="romance">Romance</option>
-              <option value="horror">Horror</option>
-            </select>
-          </div>
-        </form>
+      <div className="selector">
+        <SelectMenu setSelection={setSelection} />
+      </div>
+      <div className="book-div">
+        <BookList bookList={bookList} />
       </div>
     </div>
   );

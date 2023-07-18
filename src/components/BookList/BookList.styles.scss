@@ -1,0 +1,21 @@
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(auto, 1fr));
+    gap: 10px;
+    
+       
+}
+
+.book {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 200px;
+    border: 1px solid brown;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: rgba(255, 228, 196, 0.747);
+    color: rgb(43, 20, 2);
+    z-index: 10;
+}
+
