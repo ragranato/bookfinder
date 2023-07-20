@@ -1,0 +1,28 @@
+#navbar {
+    width: 100%;
+    display: flex;
+    background-color: rgba(128, 128, 128, 0.8);
+    align-items: baseline;
+    position: fixed;
+    top: 0;
+    color: antiquewhite;
+    z-index: 100;
+
+    .navlink{
+        position: relative;     
+       
+        left: 80%; 
+
+        a{
+            color: antiquewhite;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+    }
+
+    h1 {
+        position: relative;
+        font-size: 2rem;
+        left: 3%;
+    }
+}

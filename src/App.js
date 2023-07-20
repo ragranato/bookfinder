@@ -4,6 +4,7 @@ import SelectMenu from "./components/SelectMenu/SelectMenu.component";
 import axios from "axios";
 import { API_URL, API_KEY } from "./API";
 import BookList from "./components/BookList/BookList.component";
+import NavBar from "./components/NavBar/NavBar.component";
 
 function App() {
   const [bookList, setBookList] = useState([]);
@@ -26,6 +27,7 @@ function App() {
   // console.log(bookList)
   return (
     <div className="App">
+      <NavBar />
       <div id="overlay"><img src="https://media.istockphoto.com/id/1413840933/photo/old-books-on-wooden-shelf-tiled-bookshelf-background-concept-on-the-theme-of-history.webp?b=1&s=170667a&w=0&k=20&c=1Npv4ypDzrRYfcKmz1FpolYgeLWC5ndy9VGcgC7Odvs="/></div>
       <div className="selector">
         <SelectMenu setSelection={setSelection} />
