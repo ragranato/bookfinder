@@ -5,6 +5,7 @@ import axios from "axios";
 import { API_URL, API_KEY } from "./API";
 import BookList from "./components/BookList/BookList.component";
 import NavBar from "./components/NavBar/NavBar.component";
+import Footer from "./components/Footer/Footer.component";
 
 function App() {
   const [bookList, setBookList] = useState([]);
@@ -35,6 +36,7 @@ function App() {
       <div className="book-div">
         <BookList bookList={bookList} />
       </div>
+      <Footer />
     </div>
   );
 }
