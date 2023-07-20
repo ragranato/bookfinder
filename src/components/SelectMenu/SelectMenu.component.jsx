@@ -17,10 +17,10 @@ const SelectMenu = ({setSelection}) => {
       <div className="book-selector">
         <h1>Find Your Next Book</h1>
         <form className="genre-form">
-          <div>            
+          <div className='select-div'>            
             <label className="genre-label">Choose a Genre</label>
             <select className="selections" onChange={handleChange}>
-              <option>Select One</option>
+              <option>Select Genre</option>
               <option value="mystery">
                 Mystery
               </option>

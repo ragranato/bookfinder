@@ -9,9 +9,7 @@ const BookList = ({ bookList }) => {
           const title = book.volumeInfo.title,
             author = book.volumeInfo.authors,
             thumb = book.volumeInfo.imageLinks.thumbnail,
-            link = book.accessInfo.pdf.downloadLink;
-
-            console.log(link)    
+            link = book.accessInfo.pdf.downloadLink;               
           return (
             <div key={index} className="book">
               <h2>{title}</h2>
